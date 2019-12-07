@@ -1,15 +1,15 @@
 const links = [
   {
-    label: "Instagran",
+    label: "Github",
     url: "https//www.instagran.com/",
   },
   {
-    label: "Twitter",
+    label: "Insta",
     url: "https//www.twitter.com/",
   },
 
   {
-    label: "Linkedin",
+    label: "LinkedinSquare",
     url: "https//www.facebook.com/",
   },
 ]

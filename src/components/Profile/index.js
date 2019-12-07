@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import {
   ProfileContainer,
   ProfileLink,
+  ProfileHeader,
   ProfileName,
   ProfileOccupation,
   ProfileBio,
@@ -30,9 +31,14 @@ const Profile = () => {
   return (
     <ProfileContainer>
       <ProfileLink>
-        <Avatar />
-        <ProfileName>{title}</ProfileName>
-        <ProfileOccupation>{pro}</ProfileOccupation>
+        <ProfileHeader>
+          <Avatar />
+          <ProfileName>
+            {title}
+            <ProfileOccupation>{pro}</ProfileOccupation>
+          </ProfileName>
+        </ProfileHeader>
+
         <ProfileBio>{description}</ProfileBio>
       </ProfileLink>
     </ProfileContainer>
