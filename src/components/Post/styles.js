@@ -25,8 +25,9 @@ export const PostTag = styled.div`
   min-width: 90px;
   min-height: 90px;
   text-transform: uppercase;
+  color: #fff;
   border-radius: 50%;
-  background: ${props => props.background};
+  background: ${props => (props.background ? props.background : "#1fa19c")};
   font-size: 1.2rem;
   font-weight: 700;
 `

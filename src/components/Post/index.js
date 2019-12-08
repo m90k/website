@@ -1,5 +1,6 @@
 import React from "react"
-
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
 import {
   PostLink,
   PostContainer,
@@ -10,22 +11,37 @@ import {
   PostDescription,
 } from "./styles"
 
-const Post = () => (
-  <PostLink to="/slug/">
+const Post = ({
+  slug,
+  background,
+  category,
+  date,
+  timeToRead,
+  postTitle,
+  postDescription,
+}) => (
+  <PostLink to={slug}>
     <PostContainer>
-      <PostTag background="blue">Js</PostTag>
+      <PostTag background={background}>{category}</PostTag>
       <PostArticle>
-        <PostDate>22/02/1990</PostDate>
-        <PostTitle>Title</PostTitle>
-        <PostDescription>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
-          necessitatibus vitae in nihil porro commodi laboriosam aspernatur,
-          minima nam illum facilis veniam amet! Incidunt ea,tempore in autem
-          officiis magnam?
-        </PostDescription>
+        <PostDate>
+          {date} * {timeToRead} de Leitura
+        </PostDate>
+        <PostTitle>{postTitle}</PostTitle>
+        <PostDescription>{postDescription}</PostDescription>
       </PostArticle>
     </PostContainer>
   </PostLink>
 )
+
+Post.propTypes = {
+  slug: PropTypes.string.isRequired,
+  background: PropTypes.string,
+  category: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  timeToRead: PropTypes.string.isRequired,
+  postTitle: PropTypes.string.isRequired,
+  postDescription: PropTypes.string.isRequired,
+}
 
 export default Post
