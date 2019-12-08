@@ -9,6 +9,11 @@ const links = [
   },
 
   {
+    label: "Blog",
+    url: "/blog",
+  },
+
+  {
     label: "Conhecimentos",
     url: "/techs",
   },

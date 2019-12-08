@@ -26,5 +26,4 @@ export const IconContainer = styled.div`
   width: 30px;
   height: 30px;
   fill: #bbb;
-  background: red;
 `
