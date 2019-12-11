@@ -7,10 +7,9 @@ import Post from "./../components/Post"
 const BlogPage = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query AllPosts {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
-            id
             timeToRead
             frontmatter {
               category
@@ -18,6 +17,9 @@ const BlogPage = () => {
               postDescription
               postTitle
               background
+            }
+            fields {
+              slug
             }
           }
         }
@@ -33,6 +35,7 @@ const BlogPage = () => {
       {PostList.map(
         ({
           node: {
+            fields: { slug },
             frontmatter: {
               category,
               date,
@@ -44,7 +47,7 @@ const BlogPage = () => {
           },
         }) => (
           <Post
-            slug={category}
+            slug={slug}
             background={background}
             category={category}
             date={date}
